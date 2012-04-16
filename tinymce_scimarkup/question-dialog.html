@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Science Markup</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+</head>
+<body>
+
+<form onsubmit="QuestionDialog.insert();return false;" action="#" id="questionmarkupform">
+	<h3>Science objects - Question Markup.</h3>
+
+	<p>Author: <input id="questionauthor" name="questionauthor" type="text" class="text" /></p>
+	<p>Topic: <input id="questiontopic" name="questiontopic" type="text" class="text" /></p>
+	<p>Tags: <input id="questiontags" name="questiontags" type="text" class="text" /></p>
+	<p>Ref ID: <input id="questionrefid" name="questionrefid" type="text" class="text" /></p>
+	<p>License: <input id="questionlicense" name="questionlicense" type="text" class="text" /></p>
+
+	<p>Content: <input id="questioncontent" name="questioncontent" type="text" class="text" /></p>
+
+	<div class="mceActionPanel">
+		<input type="button" id="insert" name="insert" value="{#insert}" onclick="QuestionDialog.insert();" />
+		<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+	</div>
+</form>
+
+</body>
+</html>
