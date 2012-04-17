@@ -1,0 +1,15 @@
+.hero-unit {
+	text-align: center;
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+#headersixhero {
+	font-size: 150%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+header#intro {
+	margin-bottom: 30px;
+}
