@@ -7,3 +7,10 @@ metadata to online science content, making it more discoverable, re-useable,
 creditable, and extensible. 
 
 Currently there is just the tinymce implementation. 
+
+More info
+===
+
+- #oahack (open access hackers) group wiki: http://oahack.wikispaces.com/
+
+
