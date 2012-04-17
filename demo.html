@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+	<head>
+		<title>TinyMCE Test</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+		<script type="text/javascript" src="tinymce_scimarkup/scimarkup_config.js"></script>
+	</head>
+	<style>
+		#demoform {
+			width: 650px;
+			margin: auto;
+		}
+
+		.content {
+			width: 750px;
+			margin: auto;
+		}
+
+		header {
+			text-align: center;
+		}
+
+		#markup h1 {
+			text-align: center;
+		}
+
+	</style>
+	<body>
+		<div class="content">
+			<header>
+				<h1>Science Markup</h1>
+				<h2>Tiny MCE Plugin Demo</h2>
+			</header>
+			<form id="demoform" method="" action="">
+				<textarea name="content" cols="75" rows="20">
+					<p>Enter or highlight text here, and click the Question Markup
+					(question mark) button below to try. </p>
+				
+					<p>Click the HTML editor button to see the raw markup with the science
+					object now included. The raw markup will also display below. </p>
+				</textarea>
+			</form>
+			<div id="markup">
+			</div>
+		</div>
+</body>
+</html>
+
