@@ -1,0 +1,58 @@
+<!DOCTYPE html>  <html> <head>   <title>editor_plugin_src.js</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="editor_plugin_src.html">                 editor_plugin_src.js               </a>                                           <a class="source" href="dialog.html">                 dialog.js               </a>                                           <a class="source" href="scimarkup_config.html">                 scimarkup_config.js               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               editor_plugin_src.js             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>                            </td>             <td class="code">               <div class="highlight"><pre><span class="cm">/* </span>
+<span class="cm"> * this src file has to be compressed (eg. using http://javascriptcompressor.com/) </span>
+<span class="cm"> * and the compressed version saved as editor_plugin.js in order for the plugin </span>
+<span class="cm"> * to work. </span>
+<span class="cm"> */</span>
+
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">tinymce</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">&#39;tinymce.plugins.ScienceMarkup&#39;</span><span class="p">,</span> <span class="p">{</span>
+				<span class="cm">/** Initializes the plugin, this will be executed after the</span>
+<span class="cm">				 * plugin has been created.  This call is done before the</span>
+<span class="cm">				 * editor instance has finished it&#39;s initialization so use the</span>
+<span class="cm">				 * onInit event of the editor instance to intercept that event.</span>
+<span class="cm">                 *</span>
+<span class="cm">				 * @param {tinymce.Editor} ed Editor instance that the plugin</span>
+<span class="cm">				 * is initialized in.</span>
+<span class="cm">				 * @param {string} url Absolute URL to where the plugin is</span>
+<span class="cm">				 * located.</span>
+<span class="cm">                 */</span>
+                <span class="nx">init</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ed</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>Register the command so that it can be invoked by
+using tinyMCE.activeEditor.execCommand('mceQuestionMarkup');</p>             </td>             <td class="code">               <div class="highlight"><pre>                        <span class="nx">ed</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="s1">&#39;mceQuestionMarkup&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                                <span class="nx">ed</span><span class="p">.</span><span class="nx">windowManager</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>"file" is the core of the plugin. make sure the path 
+reflects the path to the plugin on your server. </p>             </td>             <td class="code">               <div class="highlight"><pre>                                        <span class="nx">file</span> <span class="o">:</span> <span class="s1">&#39;/tinymce_scimarkup/question-dialog.html&#39;</span><span class="p">,</span>
+                                        <span class="nx">width</span> <span class="o">:</span> <span class="mi">400</span> <span class="o">+</span> <span class="nx">ed</span><span class="p">.</span><span class="nx">getLang</span><span class="p">(</span><span class="s1">&#39;sciencemarkup.delta_width&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                                        <span class="nx">height</span> <span class="o">:</span> <span class="mi">300</span> <span class="o">+</span> <span class="nx">ed</span><span class="p">.</span><span class="nx">getLang</span><span class="p">(</span><span class="s1">&#39;sciencemarkup.delta_height&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                                        <span class="nx">inline</span> <span class="o">:</span> <span class="mi">1</span>
+                                <span class="p">},</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Plugin absolute URL</p>             </td>             <td class="code">               <div class="highlight"><pre>                                        <span class="nx">plugin_url</span> <span class="o">:</span> <span class="s1">&#39;/tinymce_markup&#39;</span><span class="p">,</span> 
+					<span class="nx">inline</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>USER CUSTOM ARGS! access in plugin via 
+tinyMCEPopup.getWindowArg('some<em>custom</em>arg');</p>             </td>             <td class="code">               <div class="highlight"><pre>					<span class="nx">default_author</span><span class="o">:</span> <span class="s2">&quot;Jessy Kate Schingler&quot;</span><span class="p">,</span>
+					<span class="nx">default_license</span><span class="o">:</span> <span class="s2">&quot;CC-BY-SA-NC&quot;</span>
+                                <span class="p">});</span>
+                        <span class="p">});</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>Register a button for the question markup to show up
+in the tinymce editor. cmd argument corresponds to 
+ed.addCommand above. </p>             </td>             <td class="code">               <div class="highlight"><pre>                        <span class="nx">ed</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s1">&#39;questionmarkup&#39;</span><span class="p">,</span> <span class="p">{</span>
+                                <span class="nx">title</span> <span class="o">:</span> <span class="s1">&#39;Question Markup&#39;</span><span class="p">,</span>
+                                <span class="nx">cmd</span> <span class="o">:</span> <span class="s1">&#39;mceQuestionMarkup&#39;</span><span class="p">,</span>
+                                <span class="nx">image</span> <span class="o">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="s1">&#39;/img/question-icon.png&#39;</span>
+                        <span class="p">});</span>
+                <span class="p">},</span>
+
+                <span class="cm">/**</span>
+<span class="cm">                 * Returns information about the plugin as a name/value array.</span>
+<span class="cm">                 * The current keys are longname, author, authorurl, infourl and version.</span>
+<span class="cm">                 *</span>
+<span class="cm">                 * @return {Object} Name/value array containing information about the plugin.</span>
+<span class="cm">                 */</span>
+                <span class="nx">getInfo</span> <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="p">{</span>
+                                <span class="nx">longname</span> <span class="o">:</span> <span class="s1">&#39;Science Markup Plugin&#39;</span><span class="p">,</span>
+                                <span class="nx">author</span> <span class="o">:</span> <span class="s1">&#39;Jessy Kate Schingler&#39;</span><span class="p">,</span>
+                                <span class="nx">authorurl</span><span class="o">:</span> <span class="s1">&#39;http://sciencemarkup.com&#39;</span><span class="p">,</span>
+                                <span class="nx">infourl</span> <span class="o">:</span> <span class="s1">&#39;http://sciencemarkup.com&#39;</span><span class="p">,</span>
+                                <span class="nx">version</span> <span class="o">:</span> <span class="s2">&quot;0.1&quot;</span>
+                        <span class="p">};</span>
+                <span class="p">}</span>
+        <span class="p">});</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-7">&#182;</a>               </div>               <p>Register plugin</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="nx">tinymce</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;sciencemarkup&#39;</span><span class="p">,</span> <span class="nx">tinymce</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">ScienceMarkup</span><span class="p">);</span>
+<span class="p">})();</span>
+
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
