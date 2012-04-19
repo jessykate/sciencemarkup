@@ -63,10 +63,14 @@
 
       <div class="row">
         <div class="span12">
-			<p><i class="icon-warning-sign"></i> The <a href="specs.html">specs</a> are still under active development so you probably
-			don't want to deploy these just yet, but we're developing some
-			example implementations so that it's easier to see how things would
-			work. Feel free to poke around and make some <a href="help.html">suggestions</a>.</p>
+			<div class="alert">
+				<i class="icon-warning-sign"></i> <strong>Heads up!</strong>
+				The <a href="specs.html">specs</a> are still under active
+				development so you probably don't want to deploy these just
+				yet, but we're developing some example implementations so that
+				it's easier to see how things would work. Feel free to poke
+				around and make some <a href="help.html">suggestions</a>.
+			</div>
 		</div>
 	  </div><!-- end row -->
 
@@ -77,20 +81,25 @@
 				<div>Check the <a
 						href="/docs/tinymce/editor_plugin_src.html">annotated
 						source code</a> or download from 
-						<a href="https://github.com/jessykate/sciencemarkup/tree/master/tinymce_scimarkup">github</a>!</div>
+					<a href="https://github.com/jessykate/sciencemarkup/tree/master/tinymce_scimarkup">github</a>!
+				</div>
 			</header>
+		</div>
+	  </div><!-- end row -->
+
+      <div class="row">
+        <div class="span6">
 			<form id="demoform" method="" action="">
-				<textarea name="content" rows="10">
+				<textarea name="content" rows="10" id="tinymcedemo">
 					<p>Enter or highlight text here, and click the Question Markup
 					(question mark) button below to try. </p>
 				
-					<p>Click the HTML editor button to see the raw markup with the science
-					object now included. The raw markup will also display below. </p>
+					<p>After inserting the markup, you can click the HTML editor button
+					to see the raw markup with the science object now included. </p>
 				</textarea>
 			</form>
-			<div id="markup">
-			</div>
-
+        </div>
+        <div class="span6" id="markup">
         </div>
 	  </div><!-- end row -->
 

@@ -13,3 +13,13 @@
 header#intro {
 	margin-bottom: 30px;
 }
+
+.promobox {
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 8px 35px 8px 14px;
+}
+
